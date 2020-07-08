@@ -30,7 +30,7 @@ environment:
   SIMPLECOV: yes
 <% end -%>
   matrix:
-<% ((@configs['includes'] - (@configs['remove_includes'] || [])) + (@configs['matrix'] + (@configs['matrix_extras'] || []))).each do |matrix| -%>
+<% (@configs['includes'] - (@configs['remove_includes'] || []) + (@configs['extras'] || [])).each do |matrix| -%>
     -
   <%- matrix.each do |key, value| -%>
     <%- if (@configs['spec_type'] && value =~ %r{spec}) -%>
